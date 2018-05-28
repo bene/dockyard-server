@@ -23,8 +23,8 @@ func BuildImage(project Project, build *Build) error {
 	buildId := stringid.GenerateRandomID()
 	tempDir := os.TempDir()
 
-	build.ProjectId = project.Id
 	build.Id = buildId
+	build.ProjectId = project.Id
 	build.Status = PENDING
 	build.Date = time.Now().Unix()
 
@@ -61,5 +61,10 @@ func BuildImage(project Project, build *Build) error {
 	}
 
 	build.Status = FINISHED
+	return nil
+}
+
+func GetProject(projectId string) *Project {
+
 	return nil
 }

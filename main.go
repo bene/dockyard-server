@@ -10,7 +10,7 @@ func main() {
 
 	router := server.NewServer()
 
-	err := http.ListenAndServe(":5050", router)
+	err := http.ListenAndServe(":6551", router)
 	if err != nil {
 		log.Fatalln(err)
 	}
